@@ -50,7 +50,7 @@ export class ToursComponent implements OnInit {
     // @ts-ignore
     document.getElementById("description").value = ""
     // @ts-ignore
-    document.getElementById("titleForm").innerHTML = "Tạo mới Tour";
+    document.getElementById("titleForm").innerHTML = "Thêm tour";
     document.getElementById("buttonCreate")!.hidden = false
     document.getElementById("buttonUpdate")!.hidden = true
   }
@@ -58,7 +58,7 @@ export class ToursComponent implements OnInit {
   setUpFormUpdate(tour: Tour) {
     this.tourForm.patchValue(tour)
     // @ts-ignore
-    document.getElementById("titleForm").innerHTML = "Chỉnh sửa Tour";
+    document.getElementById("titleForm").innerHTML = "Sửa Tour";
     document.getElementById("buttonCreate")!.hidden = true
     document.getElementById("buttonUpdate")!.hidden = false
     document.getElementById("myModal")!.style.display = "block"
@@ -95,7 +95,7 @@ export class ToursComponent implements OnInit {
       })
     })
     // @ts-ignore
-    document.getElementById("rest").click()
+    document.getElementById("reset").click()
   }
 
   createSuccess() {
@@ -154,8 +154,7 @@ export class ToursComponent implements OnInit {
   deleteTour(id?: number) {
     this.idt = id
     Swal.fire({
-      title: 'Bạn có muốn tour này?',
-      text: "Dữ liệu sẽ không thể khôi phục!",
+      title: 'Bạn có muốn xóa tour này?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -177,7 +176,7 @@ export class ToursComponent implements OnInit {
         })
         Swal.fire(
           'Xóa thành công!',
-          'Dữ liệu đã bị xóa bỏ',
+          'Tour đã bị xóa bỏ',
           'success'
         )
       }
